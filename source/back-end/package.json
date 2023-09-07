@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@ibm-cloud/secrets-manager": "^2.0.0",
+    "dotenv": "^16.3.1",
+    "mongoose": "^7.5.0"
+  }
+}
