@@ -1,23 +1,23 @@
 const Flight = require("../schemas/flights.schema");
 
-async function flightSearchOD(originID, destinationID){
-
-    const flights = await Flight.find({ORIGIN_AIRPORT: originID, DESTINATION_AIRPORT: destinationID});
+async function allFlights(){
+    const flights = await Flight.find({});
     return flights;
-
+}
+  
+async function searchingIATAFlight(IATA_Origin, IATA_Arrival){
+    const flight = await Flight.find({ORIGIN_AIRPORT: IATA_Origin, DESTINATION_AIRPORT: IATA_Arrival})
+    return flight
 }
 
-async function flightSearchDA(date, airline){
-
-    const flights = await Flight.find({DEPARTURE_DATE: date, AIRLINE: airline});
-
+async function searchingDATEflight(DepartureDateFlight){
+    const dateflight = await Flight.find({DEPARTURE_DATE : DepartureDateFlight})
+    return dateflight
 }
 
-async function flightSearchID(id){
-
-    const flights = await Flight.findById(id);
-    return flights;
-
+async function seachingIDflight(FlightID){
+    const searchid = await Flight.findById(FlightID)
+    return searchid
 }
 
-module.exports = {flightSearchOD, flightSearchDA, flightSearchID};
+module.exports = {allFlights, searchingIATAFlight, searchingDATEflight, seachingIDflight}
