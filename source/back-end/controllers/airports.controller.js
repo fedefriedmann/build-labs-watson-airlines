@@ -5,4 +5,9 @@ async function allAirports(){
     return airports;
 }
 
-module.exports = {allAirports}
+async function airportSearchID(id){
+    const airports = await Airport.findById(id);
+    return airports;
+}
+
+module.exports = {allAirports, airportSearchID}

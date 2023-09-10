@@ -37,16 +37,6 @@ async function main(){
         }
       });
 
-            //creando las ruta para que el usuario acceda a la lista de vuelos 
-    app.get('/flights', async (req, res) => {
-      try {
-        const searchFlights = await flights.allFlights();
-        res.json(searchFlights);
-        } catch (error) {
-          console.error(error);
-          res.status(500).json({ error: 'Error al obtener la lista de vuelos' });
-        }
-      });
       //creando la busqueda por iata
     app.get("/search_iata_flight/:iata_origin/:iata_arrival", async (req, res) => {
       try {
@@ -88,14 +78,29 @@ async function main(){
         }
       });
 
-      //creando la ruta para que el usuario pueda buscar por id
-      app.get("/searchflightid/:id", async (req, res) => {
-        const id = req.params.id; {
-          const searchedFlight = await flights.searchingIDflight(id);
-          (searchedFlight) 
-            res.json(searchedFlight);
-      }});
+      app.get("/flights", async (req, res) => {
+        {
+          const SearchFlights = await flights.allFlights(); // Busca todos los vuelos en la base de datos
+          res.json(SearchFlights);
+        }
+      });
+      
 
+      //creando la ruta para que el usuario pueda buscar por id de vuelo
+      app.get("/flightsid/:id",async (req,res) => {
+        const flightSearchingId = req.params.id;
+        const flightSearchingByID = await flights.flightSearchID(flightSearchingId);
+        res.json(flightSearchingByID);
+       });
+
+
+      //creando la ruta para que el usuario pueda buscar por id de aeropuerto
+      app.get("/airportid/:id",async (req,res) => {
+        const airportSearchingId = req.params.id;
+        const airportSearchingByID = await airports.airportSearchID(airportSearchingId);
+        res.json(airportSearchingByID);
+       });
+ 
 const PORT = 30120;
 app.listen(PORT, () => {
   console.log(`Servidor Node.js en funcionamiento en el puerto ${PORT}`);
