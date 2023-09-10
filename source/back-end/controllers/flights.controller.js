@@ -15,9 +15,9 @@ async function searchingDATEflight(DepartureDateFlight){
     return dateflight
 }
 
-async function seachingIDflight(FlightID){
-    const searchid = await Flight.findById(FlightID)
-    return searchid
-}
+async function searchingIDflight(FlightID) {
+      const searchResult = await Flight.findById(FlightID);
+      return searchResult
+  }
 
-module.exports = {allFlights, searchingIATAFlight, searchingDATEflight, seachingIDflight}
+module.exports = {allFlights, searchingIATAFlight, searchingDATEflight, searchingIDflight}

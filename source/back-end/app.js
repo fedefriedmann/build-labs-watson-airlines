@@ -89,16 +89,12 @@ async function main(){
       });
 
       //creando la ruta para que el usuario pueda buscar por id
-      app.get("/searchflightid/:id", async (req,res) => 
-         {
-          const id_flight = req.params.id_flight;
-
-          const searchingFlightByID = await flights.seachingIDflight(id_flight);
-          res.json(searchingFlightByID);
-      });
-    
-
-
+      app.get("/searchflightid/:id", async (req, res) => {
+        const id = req.params.id; {
+          const searchedFlight = await flights.searchingIDflight(id);
+          (searchedFlight) 
+            res.json(searchedFlight);
+      }});
 
 const PORT = 30120;
 app.listen(PORT, () => {
