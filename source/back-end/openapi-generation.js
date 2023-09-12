@@ -68,7 +68,7 @@ const mongo_specs = {
 // API general specs
 const general_specs = {
     info: {
-        title: "Watson Airlines Assistant",
+        title: "Watson Airlines Customer Experience Assistant",
         description:
             "This is a REST API for the Watson Airlines Customer Experience use case.",
         contact: {
@@ -79,11 +79,7 @@ const general_specs = {
     },
     servers: [
         {
-            url : "https://localhost:30120",
-            description : "Local Host",
-        },
-        {
-            url: "https://{app-name}.{cloud-region}.codeengine.appdomain.cloud",
+            url: "https://bl-test-ffriedmann.1724y2zslvb5.us-south.codeengine.appdomain.cloud/",
             description: "IBM Code Engine Deployment",
         },
     ],
