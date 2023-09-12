@@ -1,0 +1,14 @@
+{
+	"id": "ApiKey-02b7fe62-f1ef-4837-bb2f-790a1e61d1be",
+	"crn": "crn:v1:bluemix:public:iam-identity::a/9ad79de0114e427cb9a231c989fae848F-2545638F::apikey:ApiKey-02b7fe62-f1ef-4837-bb2f-790a1e61d1be",
+	"iam_id": "IBMid-69200048M1",
+	"account_id": "9ad79de0114e427cb9a231c989fae848",
+	"name": "cliapikey",
+	"description": "api key bl",
+	"apikey": "x7NU7HGaFlcnEfGbb9Z4Kv7FFybVlQM4UXbhyC8hkMWf",
+	"locked": false,
+	"entity_tag": "1-0f2ce651211d624413034f13b46b4bd7",
+	"created_at": "2023-09-12T00:00+0000",
+	"created_by": "IBMid-69200048M1",
+	"modified_at": "2023-09-12T00:00+0000"
+}
